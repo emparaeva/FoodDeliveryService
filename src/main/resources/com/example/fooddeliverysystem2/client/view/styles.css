@@ -1,0 +1,139 @@
+/* Общий стиль */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #d9e6ff 0%, #f0f7ff 100%);
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-font-size: 14px;
+}
+
+/* Текстовые поля */
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0bec5;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
+}
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #00a1d6;
+}
+
+/* ChoiceBox */
+.choice-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0bec5;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+.choice-box .context-menu {
+    -fx-background-color: #ffffff;
+}
+.choice-box .menu-item:focused {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Кнопки */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #ff9500, #e87b00);
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffaa33, #ff9500);
+}
+.cancel-button {
+    -fx-background-color: linear-gradient(to bottom, #ef5350, #d32f2f);
+}
+.cancel-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ef5350, #b71c1c);
+}
+.action-button {
+    -fx-pref-width: 100px;
+    -fx-background-color: linear-gradient(to bottom, #ff9500, #e87b00);
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+.action-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffaa33, #ff9500);
+}
+
+/* Таблицы */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0bec5;
+}
+.table-row-cell:odd {
+    -fx-background-color: #f5f9ff;
+}
+.table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+.action-column {
+    -fx-alignment: CENTER;
+    -fx-min-width: 150px;
+}
+
+/* Статусы заказов */
+.status-column-new {
+    -fx-text-fill: #f57c00; /* Оранжевый для Новый */
+    -fx-font-weight: bold;
+}
+.status-column-assigned {
+    -fx-text-fill: #0288d1; /* Голубой для Назначен */
+    -fx-font-weight: bold;
+}
+.status-column-delivered {
+    -fx-text-fill: #388e3c; /* Зелёный для Доставлен */
+    -fx-font-weight: bold;
+}
+.status-column-canceled {
+    -fx-text-fill: #d32f2f; /* Красный для Отменён */
+    -fx-font-weight: bold;
+}
+
+/* Метки */
+.error-label {
+    -fx-text-fill: #d32f2f;
+}
+.about-title {
+    -fx-text-fill: #1976d2;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+.profile-label {
+    -fx-text-fill: #1976d2;
+}
+
+/* Alert (окно ошибки) */
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom, #d9e6ff 0%, #f0f7ff 100%);
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-font-size: 14px;
+}
+.dialog-pane .content {
+    -fx-text-fill: #1a1a1a;
+}
+.dialog-pane:header .header-panel {
+    -fx-background-color: transparent;
+}
+.dialog-pane:header .header-panel .label {
+    -fx-text-fill: #d32f2f; /* Красный для заголовка ошибки */
+    -fx-font-weight: bold;
+}
+.dialog-pane .button {
+    -fx-background-color: linear-gradient(to bottom, #ff9500, #e87b00);
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+.dialog-pane .button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffaa33, #ff9500);
+}

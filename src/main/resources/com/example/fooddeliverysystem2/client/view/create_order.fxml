@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.fooddeliverysystem2.client.controller.CreateOrderController" spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <Label text="Добавить блюдо"/>
+    <HBox spacing="10" alignment="CENTER">
+        <ComboBox fx:id="dishComboBox" prefWidth="200"/>
+        <TextField fx:id="quantityField" promptText="Количество" prefWidth="100"/>
+        <Button text="Добавить" onAction="#handleAddDish"/>
+    </HBox>
+    <Label text="Выбранные блюда:"/>
+    <TableView fx:id="selectedDishesTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="dishNameColumn" text="Блюдо" prefWidth="200"/>
+            <TableColumn fx:id="dishQuantityColumn" text="Количество" prefWidth="100"/>
+            <TableColumn fx:id="dishActionColumn" text="Действия" prefWidth="100"/>
+        </columns>
+    </TableView>
+    <Label text="Адрес доставки:"/>
+    <TextField fx:id="addressField" promptText="Введите адрес"/>
+    <Label fx:id="errorLabel" style="-fx-text-fill: red;"/>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Оформить" onAction="#handleCreateOrder"/>
+        <Button text="Отмена" onAction="#handleCancel"/>
+    </HBox>
+</VBox>
+

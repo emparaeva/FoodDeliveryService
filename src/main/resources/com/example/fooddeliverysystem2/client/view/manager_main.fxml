@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.fooddeliverysystem2.client.controller.ManagerMainController" spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <TabPane fx:id="tabPane">
+        <tabs>
+            <Tab text="Профиль" closable="false">
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Имя:"/>
+                    <Label fx:id="usernameLabel"/>
+                    <Label text="Телефон:"/>
+                    <Label fx:id="phoneLabel"/>
+                    <Button fx:id="logoutButton" text="Выйти" onAction="#handleLogout"/>
+                </VBox>
+            </Tab>
+            <Tab text="Меню" closable="false">
+                <VBox spacing="10">
+                    <TableView fx:id="dishesTable">
+                        <columns>
+                            <TableColumn fx:id="nameColumn" text="Название" prefWidth="150"/>
+                            <TableColumn fx:id="descriptionColumn" text="Описание" prefWidth="450"/> <!-- Новый столбец -->
+                            <TableColumn fx:id="priceColumn" text="Цена" prefWidth="100"/>
+                            <TableColumn fx:id="availableColumn" text="Доступно" prefWidth="100"/>
+                            <TableColumn fx:id="dishActionColumn" text="Действия" prefWidth="300"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER">
+                        <TextField fx:id="newDishName" promptText="Название блюда"/>
+                        <TextField fx:id="newDishDescription" promptText="Описание блюда"/> <!-- Новое поле -->
+                        <TextField fx:id="newDishPrice" promptText="Цена"/>
+                        <Button fx:id="addDishButton" text="Добавить блюдо" onAction="#handleAddDish"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+            <Tab text="Заказы" closable="false">
+                <VBox spacing="10">
+                    <TableView fx:id="ordersTable">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="statusOrderColumn" text="Статус" prefWidth="100"/>
+                            <TableColumn fx:id="totalPriceColumn" text="Сумма" prefWidth="100"/>
+                            <TableColumn fx:id="deliveryAddressColumn" text="Адрес" prefWidth="200"/>
+                            <TableColumn fx:id="courierColumn" text="Курьер" prefWidth="100"/>
+                            <TableColumn fx:id="createdAtColumn" text="Время создания" prefWidth="150"/>
+                            <TableColumn fx:id="actionColumn" text="Действия" prefWidth="350"/>
+                        </columns>
+                    </TableView>
+                    <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.fooddeliverysystem2.client.controller.AdminMainController" spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <TabPane fx:id="tabPane">
+        <tabs>
+            <Tab text="Профиль" closable="false">
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Имя:"/>
+                    <Label fx:id="usernameLabel"/>
+                    <Label text="Телефон:"/>
+                    <Label fx:id="phoneLabel"/>
+                    <Button fx:id="logoutButton" text="Выйти" onAction="#handleLogout"/>
+                </VBox>
+            </Tab>
+            <Tab text="Пользователи" closable="false">
+                <VBox spacing="10">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="searchField" promptText="Поиск по имени или логину" onAction="#handleSearch"/>
+                        <Button fx:id="clearSearchButton" text="Сбросить" onAction="#handleClearSearch"/>
+                    </HBox>
+                    <TableView fx:id="usersTable">
+                        <columns>
+                            <TableColumn fx:id="userIdColumn" text="ID" prefWidth="60"/>
+                            <TableColumn fx:id="usernameColumn" text="Имя" prefWidth="200"/>
+                            <TableColumn fx:id="roleColumn" text="Роль" prefWidth="120"/>
+                            <TableColumn fx:id="userActionColumn" text="Действия" prefWidth="300"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER">
+                        <TextField fx:id="newUsername" promptText="Имя пользователя"/>
+                        <TextField fx:id="newPassword" promptText="Пароль"/>
+                        <ChoiceBox fx:id="newUserRole"/>
+                        <Button fx:id="addUserButton" text="Добавить" onAction="#handleAddUser"/>
+                    </HBox>
+                    <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+                </VBox>
+            </Tab>
+            <Tab text="Статистика" closable="false">
+                <VBox spacing="10">
+                    <HBox spacing="20">
+                        <VBox spacing="5">
+                            <Label text="Всего пользователей:"/>
+                            <Label fx:id="totalUsersLabel" text="0"/>
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Всего заказов:"/>
+                            <Label fx:id="totalOrdersLabel" text="0"/>
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Среднее время доставки:"/>
+                            <Label fx:id="avgDeliveryTimeLabel" text="0 мин"/>
+                        </VBox>
+                    </HBox>
+                    <BarChart fx:id="ordersChart" title="Заказы по статусам">
+                        <xAxis>
+                            <CategoryAxis label="Статус"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Количество"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fooddeliverysystem2.client.controller.ClientMainController" spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <TabPane fx:id="tabPane">
+        <tabs>
+            <Tab text="Профиль">
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="Имя:" styleClass="profile-label"/>
+                    <Label fx:id="usernameLabel" styleClass="profile-value"/>
+                    <Label text="Телефон:" styleClass="profile-label"/>
+                    <Label fx:id="phoneLabel" styleClass="profile-value"/>
+                    <Button fx:id="logoutButton" text="Выйти" onAction="#handleLogout" styleClass="logout-button"/>
+                </VBox>
+            </Tab>
+            <Tab text="Меню">
+                <VBox spacing="10">
+                    <HBox spacing="10">
+                        <Label text="Поиск по названию:"/>
+                        <TextField fx:id="searchField" promptText="Введите название блюда" onAction="#handleSearch"/>
+                    </HBox>
+                    <TableView fx:id="dishesTable">
+                        <columns>
+                            <TableColumn fx:id="nameColumn" text="Название" prefWidth="150"/>
+                            <TableColumn fx:id="descriptionColumn" text="Описание" prefWidth="300"/>
+                            <TableColumn fx:id="priceColumn" text="Цена" prefWidth="100"/>
+                            <TableColumn fx:id="categoryColumn" text="Категория" prefWidth="100"/>
+                            <TableColumn fx:id="availableColumn" text="Доступно" prefWidth="80"/>
+                        </columns>
+                    </TableView>
+                    <Button fx:id="createOrderButton" text="Создать заказ" onAction="#handleCreateOrder"/>
+                </VBox>
+            </Tab>
+            <Tab text="Мои заказы">
+                <TableView fx:id="ordersTable">
+                    <columns>
+                        <TableColumn fx:id="orderIdColumn" text="ID заказа" prefWidth="80"/>
+                        <TableColumn fx:id="dishCompositionColumn" text="Состав заказа" prefWidth="250"/>
+                        <TableColumn fx:id="statusOrderColumn" text="Статус" prefWidth="100" styleClass="status-column"/>
+                        <TableColumn fx:id="totalPriceColumn" text="Цена" prefWidth="80"/>
+                        <TableColumn fx:id="deliveryAddressColumn" text="Адрес" prefWidth="150"/>
+                        <TableColumn fx:id="createdAtColumn" text="Время создания" prefWidth="150"/>
+                        <TableColumn fx:id="deliveredAtColumn" text="Время получения" prefWidth="150"/>
+                        <TableColumn fx:id="actionColumn" text="Действия" prefWidth="200"/>
+                    </columns>
+                </TableView>
+            </Tab>
+            <Tab text="Об авторе">
+                <VBox alignment="CENTER" spacing="10">
+                    <Label fx:id="aboutTitleLabel" text="Food Delivery System" styleClass="about-title"/>
+                    <Label fx:id="aboutDeveloperLabel" text="Разработчик: Параева Елена" styleClass="about-text"/>
+                    <Label fx:id="aboutDescriptionLabel" text="Приложение для заказа еды с доставкой." styleClass="about-text"/>
+                    <Label fx:id="aboutContactLabel" text="Контакты: 222592@edu.fa.ru" styleClass="about-text"/>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+</VBox>

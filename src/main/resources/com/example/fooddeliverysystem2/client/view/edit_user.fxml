@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.fooddeliverysystem2.client.controller.EditUserController" spacing="15" alignment="CENTER" prefWidth="500" minHeight="400">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <Label text="Редактировать пользователя" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="15">
+        <Label text="Имя пользователя:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="usernameField" promptText="Имя пользователя" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="300"/>
+
+        <Label text="Полное имя:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="fullNameField" promptText="Полное имя" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="300"/>
+
+        <Label text="Телефон:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="phoneField" promptText="Телефон" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="300"/>
+
+        <Label text="Роль:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ChoiceBox fx:id="roleChoiceBox" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="300"/>
+
+        <Label text="Пароль (оставьте пустым, чтобы не менять):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="passwordField" promptText="Новый пароль" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="300"/>
+    </GridPane>
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id="saveButton" text="Сохранить" onAction="#handleSave"/>
+        <Button fx:id="cancelButton" text="Отмена" onAction="#handleCancel"/>
+    </HBox>
+    <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+</VBox>

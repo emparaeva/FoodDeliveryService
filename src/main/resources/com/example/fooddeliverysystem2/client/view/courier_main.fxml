@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.fooddeliverysystem2.client.controller.CourierMainController" spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <TabPane fx:id="tabPane">
+        <tabs>
+            <Tab text="Профиль" closable="false">
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Имя:"/>
+                    <Label fx:id="usernameLabel"/>
+                    <Label text="Телефон:"/>
+                    <Label fx:id="phoneLabel"/>
+                    <Button fx:id="logoutButton" text="Выйти" onAction="#handleLogout"/>
+                </VBox>
+            </Tab>
+            <Tab text="Мои заказы" closable="false">
+                <VBox spacing="10">
+                    <TableView fx:id="ordersTable">
+                        <columns>
+                            <TableColumn fx:id="orderIdColumn" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="statusOrderColumn" text="Статус" prefWidth="100"/>
+                            <TableColumn fx:id="totalPriceColumn" text="Сумма" prefWidth="100"/>
+                            <TableColumn fx:id="deliveryAddressColumn" text="Адрес" prefWidth="200"/>
+                            <TableColumn fx:id="createdAtColumn" text="Время создания" prefWidth="150"/> <!-- Новый столбец -->
+                            <TableColumn fx:id="actionColumn" text="Действия" prefWidth="280"/>
+                        </columns>
+                    </TableView>
+                    <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>
